@@ -11,9 +11,7 @@ import searchIcon from '../icons/search.png';
 function App() {
   return (
     <main className='App'>
-      <header>
-        <h1>Putrescent Potatoes</h1>
-      </header>
+      <Header />
     </main>
   );
 }
