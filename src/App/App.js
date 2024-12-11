@@ -1,4 +1,5 @@
 import './App.css';
+import Header from '../Header/Header';
 import searchIcon from '../icons/search.png';
 
 // Example imports (for later):
@@ -11,7 +12,7 @@ function App() {
   return (
     <main className='App'>
       <header>
-        <h1>rancid tomatillos</h1>
+        <h1>Putrescent Potatoes</h1>
       </header>
     </main>
   );
