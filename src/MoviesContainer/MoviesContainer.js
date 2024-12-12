@@ -18,7 +18,6 @@ function MoviesContainer({ posters }) {
 
   return (
       <section className='MoviesContainer'>
-        <p>We'll make some movie posters show up here!</p>
         { posterData }
       </section>
   );
