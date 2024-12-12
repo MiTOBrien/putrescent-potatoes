@@ -1,3 +1,4 @@
+import React from 'react';
 import './MoviePoster.css';
 
 function MoviePoster() {

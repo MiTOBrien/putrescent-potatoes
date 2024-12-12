@@ -1,17 +1,20 @@
-import './App.css';
+// import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
+import MoviesContainer from '../MoviesContainer/MoviesContainer';
+// import moviePosters from '../data/movie_posters';
+import './App.css';
 import searchIcon from '../icons/search.png';
 
 // Example imports (for later):
-// import { useState, useEffect } from 'react';
-// import moviePosters from '../data/movie_posters';
 // import movieDetails from '../data/movie_details';
-// import MoviesContainer from '../MoviesContainer/MoviesContainer';
 
 function App() {
+  // const [posters, setPosters] = usestate();
+
   return (
     <main className='App'>
       <Header />
+      <MoviesContainer />
     </main>
   );
 }

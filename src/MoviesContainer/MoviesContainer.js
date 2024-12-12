@@ -1,6 +1,7 @@
+import React from 'react';
 import './MoviesContainer.css';
 
-function Movies() {
+function MoviesContainer() {
   return (
       <section className='MoviesContainer'>
         <p>We'll make some movie posters show up here!</p>
@@ -8,4 +9,4 @@ function Movies() {
   );
 }
   
-export default Movies;
+export default MoviesContainer;
