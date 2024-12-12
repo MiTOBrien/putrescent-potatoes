@@ -1,4 +1,6 @@
 import React from 'react';
+import downvote from "../icons/downvote.png";
+import upvote from "../icons/upvote.png";
 import './MoviePoster.css';
 
 function MoviePoster({ poster_path, vote_count }) {
@@ -6,7 +8,7 @@ function MoviePoster({ poster_path, vote_count }) {
     <section className='MoviePoster'>
       <p>This is a movie poster.</p>
       <img src={ poster_path } />
-      <p>{ vote_count }</p>
+      <p><span><button><img src={ downvote } alt="Downvote Movie"/></button></span>{ vote_count }<span><button><img src={ upvote } alt="Upvote Movie" /></button></span></p>
     </section>
   );
 }
