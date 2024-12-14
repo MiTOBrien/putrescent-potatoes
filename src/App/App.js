@@ -11,10 +11,30 @@ import searchIcon from '../icons/search.png';
 function App() {
   const [posters, setPosters] = useState(moviePosters);
 
+  const downVote = (id) => {
+    const updatePoster  = posters.map((poster) => {
+      if (poster.id === id) {
+        return {...poster, vote_count: poster.vote_count -= 1};
+      }
+      return poster;
+    })
+    setPosters(updatePoster);
+  };
+
+  const upVote = (id) => {
+    const updatePoster = posters.map((poster) => {
+      if (poster.id === id) {
+        return {...poster, vote_count: poster.vote_count += 1}
+      }
+      return poster;
+    })
+    setPosters(updatePoster);
+  };
+
   return (
     <main className='App'>
       <Header />
-      <MoviesContainer posters={ posters } />
+      <MoviesContainer posters={ posters } downVote={ downVote } upVote={ upVote } />
     </main>
   );
 }
