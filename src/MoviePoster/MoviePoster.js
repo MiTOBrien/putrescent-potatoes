@@ -3,15 +3,16 @@ import downvote from "../icons/downvote.png";
 import upvote from "../icons/upvote.png";
 import './MoviePoster.css';
 
-function MoviePoster({ poster_path, vote_count, downVote, upVote, id }) {
+function MoviePoster({ poster_path, vote_count, changeVote, id }) {
+  
   return (
     <section className='MoviePoster'>
       <img src={ poster_path } />
       <p><span>
-        <button onClick={() => downVote(id)}>
+        <button onClick={() => changeVote(id, {vote_direction: "down"})}>
           <img src={ downvote } alt="Downvote Movie"/>
         </button></span>{ vote_count }<span>
-        <button onClick={() => upVote(id)}>
+        <button onClick={() => changeVote(id, {vote_direction: "up"})}>
           <img src={ upvote } alt="Upvote Movie" />
         </button></span></p>
     </section>
