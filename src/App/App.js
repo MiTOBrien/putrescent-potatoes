@@ -1,15 +1,29 @@
 import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
+import MovieDetails from '../MovieDetails/MovieDetails'
+import moviePosters from '../data/movie_posters';
+
+
 import './App.css';
 import searchIcon from '../icons/search.png';
 
 // Example imports (for later):
 // import moviePosters from '../data/movie_posters';
-// import movieDetails from '../data/movie_details';
+import movieDetails from '../data/movie_details';
 
 function App() {
   const [posters, setPosters] = useState([]);
+  const [movies, setMovies] = useState(moviePosters);
+  const [chosenMovie, setChosenMovie] = useState(null);
+
+  function selectMovie(movie) {
+    setChosenMovie(movie);  
+  }
+
+  function goBack() {
+    setChosenMovie(null)
+  }
   
   useEffect(() => {
     loadPosters()
@@ -42,8 +56,12 @@ function App() {
 
   return (
     <main className='App'>
-      <Header />
-      <MoviesContainer posters={ posters } changeVote = { changeVote } />
+     {chosenMovie ? (
+        <MovieDetails details={chosenMovie} goBack={goBack}/>
+      ) :(
+        <MoviesContainer posters={ posters } selectMovie={selectMovie} changeVote = { changeVote } />
+      ) }
+  
     </main>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import './MoviesContainer.css';
 
-function MoviesContainer({ posters, changeVote }) {
+function MoviesContainer({ posters, selectMovie, changeVote }) {
 
   const posterData = posters.map(poster => {
     return (
@@ -13,6 +13,8 @@ function MoviesContainer({ posters, changeVote }) {
         vote_count={poster.vote_count}
         key={poster.id}
         changeVote={changeVote}
+        movieDetails={poster}
+        selectMovie={selectMovie}
       />
     )
   })
