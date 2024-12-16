@@ -1,0 +1,29 @@
+.MovieDetails {
+  padding: 20px;
+}
+
+.MovieDetails h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.MovieDetails p {
+  margin: 5px 0;
+}
+
+.MovieDetails img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.poster-image {
+  max-width: 250px;
+  margin-top: 20px;
+}
+
+.backdrop-image {
+  max-height: 400px;
+  object-fit: cover;
+  margin-top: 20px;
+}

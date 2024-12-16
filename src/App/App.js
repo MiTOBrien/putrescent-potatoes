@@ -56,6 +56,11 @@ function App() {
 
   return (
     <main className='App'>
+      {chosenMovie && (
+        <button className="home-button" onClick={goBack}>
+          Go Back
+        </button>
+      )}
      {chosenMovie ? (
         <MovieDetails details={chosenMovie} goBack={goBack}/>
       ) :(
