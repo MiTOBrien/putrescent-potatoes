@@ -26,3 +26,17 @@ p {
   margin-top: 50px;
   color: white;
 }
+
+.home-button {
+  background-color: #ff6f61; 
+  color: white; 
+  font-size: 14px; 
+  font-weight: bold;  
+  border-radius: 6px; 
+  padding: 8px 16px; 
+  width: auto; 
+  height: auto; 
+  cursor: pointer; 
+  display: inline-block; 
+}
+
