@@ -17,8 +17,13 @@ function App() {
   const [movies, setMovies] = useState(moviePosters);
   const [chosenMovie, setChosenMovie] = useState(null);
 
-  function selectMovie(movie) {
-    setChosenMovie(movie);  
+  function selectMovie(movieId) {
+    fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${movieId}`)
+      .then(response => response.json())
+      .then(data => setChosenMovie(data)
+        
+      )
+      .catch((error) => console.error("Error fetching movie details:", error));
   }
 
   function goBack() {
@@ -57,9 +62,7 @@ function App() {
   return (
     <main className='App'>
       {chosenMovie && (
-        // <button className="home-button" onClick={goBack}>
-        //   Go Back
-        // </button>
+       
         <Header />
       )}
      {chosenMovie ? (
