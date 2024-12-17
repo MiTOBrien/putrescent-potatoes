@@ -9,8 +9,8 @@ function MoviePoster({ poster_path, vote_count, changeVote, id, selectMovie, mov
     selectMovie(movieDetails);
   }
   return (
-    <section className='MoviePoster' onClick={handleClick}>
-      <img src={ poster_path } />
+    <section className='MoviePoster' >
+      <img src={ poster_path } onClick={handleClick}/>
       <p><span>
         <button onClick={() => changeVote(id, {vote_direction: "down"})}>
           <img src={ downvote } alt="Downvote Movie"/>
