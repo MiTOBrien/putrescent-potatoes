@@ -57,16 +57,17 @@ function App() {
   return (
     <main className='App'>
       {chosenMovie && (
-        <button className="home-button" onClick={goBack}>
-          Go Back
-        </button>
+        // <button className="home-button" onClick={goBack}>
+        //   Go Back
+        // </button>
+        <Header />
       )}
      {chosenMovie ? (
         <MovieDetails details={chosenMovie} goBack={goBack}/>
       ) :(
         <>
-        < Header />
-        <MoviesContainer posters={ posters } selectMovie={selectMovie} changeVote = { changeVote } />
+          < Header />
+          <MoviesContainer posters={ posters } selectMovie={selectMovie} changeVote = { changeVote } />
         </>
       ) }
   
