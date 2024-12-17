@@ -17,8 +17,21 @@ function App() {
   const [movies, setMovies] = useState(moviePosters);
   const [chosenMovie, setChosenMovie] = useState(null);
 
-  function selectMovie(movie) {
-    setChosenMovie(movie);  
+  function selectMovie(movieId) {
+    fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${movieId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Fetched Movie Details:", data);
+        if (data && data.id) { 
+          setChosenMovie(data); 
+        }
+      })
+      .catch((error) => console.error("Error fetching movie details:", error));
   }
 
   function goBack() {

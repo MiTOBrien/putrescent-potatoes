@@ -14,8 +14,7 @@ function MoviesContainer({ posters, selectMovie, changeVote }) {
         key={poster.id}
         changeVote={changeVote}
         movieDetails={poster}
-        selectMovie={selectMovie}
-      />
+        selectMovie={() => selectMovie(poster.id)}      />
     )
   })
 
