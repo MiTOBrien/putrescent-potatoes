@@ -64,7 +64,10 @@ function App() {
      {chosenMovie ? (
         <MovieDetails details={chosenMovie} goBack={goBack}/>
       ) :(
+        <>
+        < Header />
         <MoviesContainer posters={ posters } selectMovie={selectMovie} changeVote = { changeVote } />
+        </>
       ) }
   
     </main>

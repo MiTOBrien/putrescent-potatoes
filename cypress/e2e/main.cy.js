@@ -20,7 +20,6 @@ describe('Main Page', () => {
   it('displays a list of posters', () => {
     cy.get('.MoviesContainer').should('exist')
     cy.get('.MoviePoster').first().find('button').should('exist')
-    // cy.get('.MoviePoster').first().find('title').should('exist')
-    // cy.get('.MoviePoster').first().find('title').should('have.text', '12 Angry Men')
-  })
+
+  })    // cy.get('.MoviePoster').first().find('title').should('exist')
 })
