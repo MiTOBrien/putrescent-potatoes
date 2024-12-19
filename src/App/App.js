@@ -1,34 +1,13 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import MovieDetails from '../MovieDetails/MovieDetails'
-import moviePosters from '../data/movie_posters';
-
-
 import './App.css';
-import searchIcon from '../icons/search.png';
-
-// Example imports (for later):
-// import moviePosters from '../data/movie_posters';
-import movieDetails from '../data/movie_details';
+// import searchIcon from '../icons/search.png';
 
 function App() {
   const [posters, setPosters] = useState([]);
-  const [movies, setMovies] = useState(moviePosters);
-  const [chosenMovie, setChosenMovie] = useState(null);
-
-  function selectMovie(movieId) {
-    fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${movieId}`)
-      .then(response => response.json())
-      .then(data => setChosenMovie(data)
-        
-      )
-      .catch((error) => console.error("Error fetching movie details:", error));
-  }
-
-  function goBack() {
-    setChosenMovie(null)
-  }
   
   useEffect(() => {
     loadPosters()
@@ -61,19 +40,11 @@ function App() {
 
   return (
     <main className='App'>
-      {chosenMovie && (
-       
-        <Header />
-      )}
-     {chosenMovie ? (
-        <MovieDetails details={chosenMovie} goBack={goBack}/>
-      ) :(
-        <>
           < Header />
-          <MoviesContainer posters={ posters } selectMovie={selectMovie} changeVote = { changeVote } />
-        </>
-      ) }
-  
+          <Routes>
+            <Route path="/" element={ <MoviesContainer posters={ posters } changeVote = { changeVote } />} />
+            <Route path="/:id" element={<MovieDetails />} />
+          </Routes>
     </main>
   );
 }
