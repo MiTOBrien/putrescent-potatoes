@@ -1,20 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import './MoviesContainer.css';
 
-function MoviesContainer({ posters, selectMovie, changeVote }) {
+function MoviesContainer({ posters, changeVote }) {
 
-  const posterData = posters.map(poster => {
+  const posterData = posters.map((poster) => {
     return (
-      <MoviePoster
-        id={poster.id}
-        poster_path={poster.poster_path}
-        title={poster.title}
-        vote_count={poster.vote_count}
-        key={poster.id}
-        changeVote={changeVote}
-        movieDetails={poster}
-        selectMovie={() => selectMovie(poster.id)}      />
+      <>
+        <Link 
+        to={`/${poster.id}`} 
+        key={poster.id} 
+        className="movie-link"
+      >
+          <MoviePoster
+            id={poster.id}
+            poster_path={poster.poster_path}
+            title={poster.title}
+            vote_count={poster.vote_count}
+            key={poster.id}
+            changeVote={changeVote}
+            movieDetails={poster}
+            />
+        </Link>
+      </>
     )
   })
 
