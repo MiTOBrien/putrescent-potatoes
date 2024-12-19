@@ -9,16 +9,14 @@ function MovieDetails() {
   useEffect(() => {
     fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${id}`)
       .then(response => response.json())
-      .then(data => setMovieDetails(data)) // Ensure correct property (e.g., `data.movie`)
+      .then(data => setMovieDetails(data))
       .catch((error) => console.error("Error fetching movie details:", error));
   }, [id]);
 
-  // Render a loading message if movieDetails is still null
   if (!movieDetails) {
     return <p>Loading movie details...</p>;
   }
 
-  // Destructure movieDetails after confirming it is not null
   const {
     title,
     overview,
