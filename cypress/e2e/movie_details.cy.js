@@ -13,10 +13,10 @@ describe('Movie Details Page', () => {
   });
 
   it('displays movie details when a movie poster is clicked', () => {
-    cy.get('.MoviePoster img').first().click(); // Click the first movie poster
+    cy.get('.MoviePoster img').first().click(); 
 
-    // Assert that the image and movie details section are visible
-    cy.get('img').should('exist'); // Check if the image exists (ensure it has loaded)
+    
+    cy.get('img').should('exist'); 
     cy.get('.MovieDetails').should('exist').within(() => {
       cy.get('h2').should('contain', movie.title);
       cy.get('p').should('contain', `Overview: ${movie.overview}`);
@@ -29,6 +29,6 @@ describe('Movie Details Page', () => {
 
     cy.url().should('eq', 'http://localhost:3000/');
 
-    cy.get('.MoviesContainer').should('exist'); // Adju
+    cy.get('.MoviesContainer').should('exist'); 
   });
 });
