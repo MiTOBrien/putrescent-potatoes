@@ -3,7 +3,7 @@ import downvote from "../icons/downvote.png";
 import upvote from "../icons/upvote.png";
 import './MoviePoster.css';
 
-function MoviePoster({ poster_path, vote_count, changeVote, id, selectMovie}) {
+function MoviePoster({ poster_path, vote_count, changeVote, id}) {
   const upVoteMovie = (event) => {
     event.stopPropagation();
     changeVote(id, { vote: 'upvote' });
@@ -18,7 +18,7 @@ function MoviePoster({ poster_path, vote_count, changeVote, id, selectMovie}) {
     <section className='MoviePoster' >
         <img src={poster_path} alt="Movie Poster" onClick={(event) => {
             event.stopPropagation();
-            selectMovie();
+            
           }} />
         <p><span>
         <button onClick={downVoteMovie}>
